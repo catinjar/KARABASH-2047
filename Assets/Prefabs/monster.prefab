@@ -46,10 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6405366b7d680cc40930a44e1b37cee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  car: {fileID: 0}
   selectWanderingTargetRange: 1.5
-  wanderingVelocity: 1
-  chaseVelocity: 2
+  wanderingVelocity: 2
+  chaseVelocity: 4
   triggerChaseRange: 3
 --- !u!50 &9095000545957463103
 Rigidbody2D:
