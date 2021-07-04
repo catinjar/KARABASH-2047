@@ -2,7 +2,7 @@ using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class RedGrassManager : MonoBehaviour
+public class RedGrassSpawner : MonoBehaviour
 {
     public RedGrass redGrassPrefab;
     public float spawnRate;

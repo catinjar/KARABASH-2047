@@ -93,4 +93,13 @@ public class Car : MonoBehaviour
     {
         GameState.Instance.TakeDamage(10.0f * Time.deltaTime);
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.GetComponent<Gem>() != null)
+        {
+            GameState.Instance.Score += 100;
+            Destroy(other.gameObject);
+        }
+    }
 }

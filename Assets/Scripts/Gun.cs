@@ -10,6 +10,10 @@ public class Gun : MonoBehaviour
     public float minReloadTime = 0.15f;
     public float maxReloadTime = 0.35f;
     public float reloadTimeChangeSpeed = 0.1f;
+
+    public Flame flame;
+    public float flameAmmoConsumption;
+    public float flameAmmoRestoration;
     
     private bool reloading;
     private float currentReloadTime;
@@ -64,5 +68,18 @@ public class Gun : MonoBehaviour
                 reloading = false;
             }
         }
+
+        if (GameState.Instance.FlamethrowerAmmo > 0.1 && Input.GetMouseButton(1))
+        {
+            flame.gameObject.SetActive(true);
+            GameState.Instance.FlamethrowerAmmo -= flameAmmoConsumption * Time.deltaTime;
+        }
+        else
+        {
+            flame.gameObject.SetActive(false);
+            GameState.Instance.FlamethrowerAmmo += flameAmmoRestoration * Time.deltaTime;
+        }
+
+        GameState.Instance.FlamethrowerAmmo = Mathf.Clamp(GameState.Instance.FlamethrowerAmmo, 0, 100);
     }
 }
