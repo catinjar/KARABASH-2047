@@ -9,6 +9,8 @@ public class Monster : MonoBehaviour
     public float triggerChaseRange;
 
     public RedGrass redGrassPrefab;
+
+    public AudioClip deathSound;
     
     private Car car;
     private Vector3 wanderingTarget;
@@ -54,5 +56,7 @@ public class Monster : MonoBehaviour
         
         if (spawnGrass)
             Instantiate(redGrassPrefab, transform.position, Quaternion.identity);
+        
+        SoundManager.Instance.PlaySound(deathSound);
     }
 }

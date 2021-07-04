@@ -5369,6 +5369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6f334aa30534685962e38c98a847aa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  burnSound: {fileID: 8300000, guid: 02f8a7abe099dcb4c87fc8e244f4a8d9, type: 3}
 --- !u!1 &920377030
 GameObject:
   m_ObjectHideFlags: 0
@@ -6654,6 +6655,7 @@ MonoBehaviour:
   flame: {fileID: 805396314}
   flameAmmoConsumption: 40
   flameAmmoRestoration: 25
+  shootSound: {fileID: 8300000, guid: 07fb85ef17c3f1b468c37663397e5390, type: 3}
 --- !u!1 &2136617067
 GameObject:
   m_ObjectHideFlags: 0

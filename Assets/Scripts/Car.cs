@@ -62,6 +62,11 @@ public class Car : MonoBehaviour
         
         rigidbody2D.MovePosition(transform.position + currentVelocity * Time.deltaTime * right);
         rigidbody2D.MoveRotation(currentAngle);
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     private IEnumerator SurvivalBonusRoutine()
@@ -83,8 +88,7 @@ public class Car : MonoBehaviour
         
         if (other.GetComponent<Gem>() != null)
         {
-            GameState.Instance.Score += 100;
-            Destroy(other.gameObject);
+            other.GetComponent<Gem>().Pickup();
         }
     }
     

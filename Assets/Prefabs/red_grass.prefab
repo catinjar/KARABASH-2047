@@ -4935,6 +4935,7 @@ MonoBehaviour:
   growthRate: 0.3
   burnLifeTime: 2.5
   flame: {fileID: 621654599570367919}
+  deathSound: {fileID: 8300000, guid: f85c8c516ec354d44bc84968577e01e3, type: 3}
 --- !u!58 &6863076309468084303
 CircleCollider2D:
   m_ObjectHideFlags: 0

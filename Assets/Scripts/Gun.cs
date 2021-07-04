@@ -14,6 +14,8 @@ public class Gun : MonoBehaviour
     public Flame flame;
     public float flameAmmoConsumption;
     public float flameAmmoRestoration;
+
+    public AudioClip shootSound;
     
     private bool reloading;
     private float currentReloadTime;
@@ -45,6 +47,8 @@ public class Gun : MonoBehaviour
                 rotation *= Quaternion.Euler(Random.Range(-spread, spread) * Vector3.forward);
 
                 Instantiate(bulletPrefab, shootPoint.position, rotation);
+                
+                SoundManager.Instance.PlaySound(shootSound);
             }
 
             spread += spreadSpeed * Time.deltaTime;

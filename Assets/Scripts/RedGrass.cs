@@ -6,6 +6,8 @@ public class RedGrass : MonoBehaviour
     public float burnLifeTime = 2.5f;
     public GameObject flame;
 
+    public AudioClip deathSound;
+
     public float Growth01 { get; set; } = 0.2f;
 
     public bool IsBurning { get; set; }
@@ -28,8 +30,8 @@ public class RedGrass : MonoBehaviour
             if (burningTime > burnLifeTime)
             {
                 Destroy(gameObject);
-
                 GameState.Instance.Score += 5;
+                SoundManager.Instance.PlaySound(deathSound);
             }
             
             flame.SetActive(true);
