@@ -11,13 +11,15 @@ public class RedGrass : MonoBehaviour
     public bool IsBurning { get; set; }
 
     private float burningTime;
+    private float lifeTime;
     
     private void Update()
     {
         Growth01 += growthRate * Time.deltaTime;
         Growth01 = Mathf.Clamp(Growth01, 0, 1);
 
-        transform.localScale = new Vector3(Growth01, Growth01, 1);
+        float fluctuation = Mathf.Sin(lifeTime) * 0.2f;
+        transform.localScale = new Vector3(Growth01 + fluctuation, Growth01 + fluctuation, 1);
 
         if (IsBurning)
         {
@@ -26,9 +28,13 @@ public class RedGrass : MonoBehaviour
             if (burningTime > burnLifeTime)
             {
                 Destroy(gameObject);
+
+                GameState.Instance.Score += 5;
             }
             
             flame.SetActive(true);
         }
+
+        lifeTime += Time.deltaTime;
     }
 }
