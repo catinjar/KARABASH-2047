@@ -38,7 +38,7 @@ public class Monster : MonoBehaviour
 
         if ((car.transform.position - transform.position).magnitude < 0.5f)
         {
-            GameState.Instance.TakeDamage(20.0f * Time.deltaTime);
+            GameState.Instance.TakeDamage(5.0f * Time.deltaTime);
         }
     }
 

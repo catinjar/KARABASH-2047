@@ -5805,7 +5805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterPrefab: {fileID: 9095000545957463101, guid: 2060333810641ed4a954ab536a91ab8f, type: 3}
-  spawnTime: 1
+  spawnTime: 1.2
 --- !u!4 &1105936713
 Transform:
   m_ObjectHideFlags: 0
@@ -6650,7 +6650,7 @@ MonoBehaviour:
   maxSpread: 35
   spreadSpeed: 20
   minReloadTime: 0.15
-  maxReloadTime: 0.8
+  maxReloadTime: 0.6
   reloadTimeChangeSpeed: 0.3
   flame: {fileID: 805396314}
   flameAmmoConsumption: 40

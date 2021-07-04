@@ -115,6 +115,6 @@ public class Car : MonoBehaviour
 
     private void TakeDamageFromRedGrass()
     {
-        GameState.Instance.TakeDamage(10.0f * Time.deltaTime);
+        GameState.Instance.TakeDamage(2.5f * Time.deltaTime);
     }
 }

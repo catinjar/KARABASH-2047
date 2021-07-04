@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectWanderingTargetRange: 1.5
-  wanderingVelocity: 2
-  chaseVelocity: 4
+  wanderingVelocity: 1.5
+  chaseVelocity: 2.5
   triggerChaseRange: 3
   redGrassPrefab: {fileID: 6863076309468084289, guid: 8414dfd7d928b5c449e1d24a8e387c16, type: 3}
   deathSound: {fileID: 8300000, guid: a2bec4e9b35642d4db3d40c0c9b086be, type: 3}
