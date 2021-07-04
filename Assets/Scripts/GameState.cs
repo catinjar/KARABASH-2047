@@ -21,4 +21,10 @@ public class GameState : MonoBehaviour
     public float Score { get; set; }
     public float Health { get; set; } = 100;
     public float FlamethrowerAmmo { get; set; } = 100;
+
+    public void TakeDamage(float damage)
+    {
+        Health -= damage;
+        Health = Mathf.Clamp(Health, 0, 100);
+    }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Monster : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class Monster : MonoBehaviour
     public float chaseVelocity;
     public float triggerChaseRange;
 
+    public RedGrass redGrassPrefab;
+    
     private Car car;
     private Vector3 wanderingTarget;
     private bool chasing;
@@ -33,8 +36,7 @@ public class Monster : MonoBehaviour
 
         if ((car.transform.position - transform.position).magnitude < 0.5f)
         {
-            GameState.Instance.Health -= 20.0f * Time.deltaTime;
-            GameState.Instance.Health = Mathf.Max(0, GameState.Instance.Health);
+            GameState.Instance.TakeDamage(20.0f * Time.deltaTime);
         }
     }
 
@@ -44,5 +46,10 @@ public class Monster : MonoBehaviour
                                       Random.Range(-selectWanderingTargetRange, selectWanderingTargetRange), 0);
         wanderingTarget.x = Mathf.Clamp(wanderingTarget.x, -9, 9);
         wanderingTarget.y = Mathf.Clamp(wanderingTarget.y, -5, 5);
+    }
+
+    public void Die()
+    {
+        Instantiate(redGrassPrefab, transform.position, Quaternion.identity);
     }
 }

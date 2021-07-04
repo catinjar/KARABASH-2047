@@ -23,6 +23,8 @@ public class Bullet : MonoBehaviour
         if (!collidedOnThisFrame && other.GetComponent<Monster>() != null)
         {
             GameState.Instance.Score += 10;
+            
+            other.GetComponent<Monster>().Die();
             Destroy(other.gameObject);
 
             collidedOnThisFrame = true;

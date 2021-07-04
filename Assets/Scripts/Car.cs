@@ -72,4 +72,25 @@ public class Car : MonoBehaviour
             GameState.Instance.Score += 1;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.GetComponent<RedGrass>() != null)
+        {
+            TakeDamageFromRedGrass();
+        }
+    }
+    
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.GetComponent<RedGrass>() != null)
+        {
+            TakeDamageFromRedGrass();
+        }
+    }
+
+    private void TakeDamageFromRedGrass()
+    {
+        GameState.Instance.TakeDamage(10.0f * Time.deltaTime);
+    }
 }
