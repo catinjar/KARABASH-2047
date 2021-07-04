@@ -48,8 +48,11 @@ public class Monster : MonoBehaviour
         wanderingTarget.y = Mathf.Clamp(wanderingTarget.y, -5, 5);
     }
 
-    public void Die()
+    public void Die(bool spawnGrass = true)
     {
-        Instantiate(redGrassPrefab, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+        
+        if (spawnGrass)
+            Instantiate(redGrassPrefab, transform.position, Quaternion.identity);
     }
 }

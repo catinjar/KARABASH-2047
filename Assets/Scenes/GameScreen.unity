@@ -5438,7 +5438,7 @@ PolygonCollider2D:
       - {x: 0.0019360781, y: 0.24305767}
       - {x: 0.005720582, y: -0.42150617}
       - {x: 0.5525415, y: -0.70183307}
-      - {x: 0.6225843, y: -0.72159714}
+      - {x: 0.6442974, y: -0.72159714}
 --- !u!114 &805396314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6404,6 +6404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxVelocity: 5
+  maxVelocityInRedGrass: 3
   acceleration: 10
   rotateSpeed: 180
   velocityDamp: 0.9

@@ -4,6 +4,7 @@ using UnityEngine;
 public class Car : MonoBehaviour
 {
     public float maxVelocity;
+    public float maxVelocityInRedGrass;
     public float acceleration;
     public float rotateSpeed;
     public float velocityDamp;
@@ -73,33 +74,32 @@ public class Car : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.GetComponent<RedGrass>() != null)
         {
             TakeDamageFromRedGrass();
         }
+        
+        if (other.GetComponent<Gem>() != null)
+        {
+            GameState.Instance.Score += 100;
+            Destroy(other.gameObject);
+        }
     }
     
-    private void OnCollisionStay2D(Collision2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.GetComponent<RedGrass>() != null)
         {
             TakeDamageFromRedGrass();
+
+            currentVelocity = Mathf.Min(currentVelocity, maxVelocityInRedGrass);
         }
     }
 
     private void TakeDamageFromRedGrass()
     {
         GameState.Instance.TakeDamage(10.0f * Time.deltaTime);
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.GetComponent<Gem>() != null)
-        {
-            GameState.Instance.Score += 100;
-            Destroy(other.gameObject);
-        }
     }
 }

@@ -6,6 +6,12 @@ public class Flame : MonoBehaviour
     {
         if (other.GetComponent<RedGrass>())
         {
+            other.GetComponent<RedGrass>().IsBurning = true;
+        }
+
+        if (other.GetComponent<Monster>())
+        {
+            other.GetComponent<Monster>().Die(false);
         }
     }
 }
