@@ -1,5 +1,7 @@
 using System.Collections;
+using DefaultNamespace;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Car : MonoBehaviour
 {
@@ -26,6 +28,15 @@ public class Car : MonoBehaviour
     private void FixedUpdate()
     {
         UpdateInput();
+
+        if (GameState.Instance.Health <= 0)
+        {
+            GameResult.Result = GameState.Instance.Score;
+            if (GameResult.Result > GameResult.BestResult)
+                GameResult.BestResult = GameResult.Result;
+            
+            SceneManager.LoadScene("RestartScreen");
+        }
     }
 
     private void UpdateInput()
